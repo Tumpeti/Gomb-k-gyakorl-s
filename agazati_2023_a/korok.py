@@ -24,8 +24,8 @@ def kiiras ():
 
 def elso_idos():
     i = 0
-    idos = 0
-    while i < len(korok_lista):
+    idos = -1
+    while i < len(korok_lista) and idos == -1:
         if korok_lista[i] > 70:
             idos = i
         i += 1
@@ -37,5 +37,6 @@ def konzolra_ir():
 
 
 def fajl_ir():
-    f = open("oreg.txt", "a")
-    f.write(str(elso_idos()))
+    f = open("oreg.txt", "w", encoding="utf-8")
+    f.write(f"Első idős ember korának indexe: {elso_idos()}")
+    f.close()
